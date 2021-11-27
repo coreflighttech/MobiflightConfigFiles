@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <MobiflightConnector>
   <outputs>
     <config guid="350fb30d-0670-417a-b654-000c6ab2c11a">
@@ -100,7 +100,7 @@
       <active>true</active>
       <description>PMDG LVL CHG LIGHT</description>
       <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.1.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-        <source type="FSUIPC" offset="0x6544" offsetType="Integer" size="1" mask="0x00FF" bcdMode="False" />
+        <source type="FSUIPC" offset="0x653E" offsetType="Integer" size="1" mask="0x00FF" bcdMode="False" />
         <comparison active="False" value="" operand="=" ifValue="" elseValue="" />
         <display type="Pin" serial="CORE_MCP_v17_2/ SN-c40-9b2" trigger="normal" pin="lvl_chg" pinBrightness="255" />
         <preconditions />
@@ -491,13 +491,17 @@
         </configrefs>
       </settings>
     </config>
-    <config guid="e80def81-ddee-46f1-87c6-658a093336bc">
+    <config guid="178cf5bf-d472-4e8c-a261-e7c4ac301a5f">
       <active>true</active>
-      <description>BACKLIGHT ADJUSTMENT</description>
+      <description>PMDG BACKLIGHT ADJUSTMENT</description>
       <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.1.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-        <source type="FSUIPC" offset="0x655C" offsetType="Integer" size="1" mask="0x00FF" bcdMode="False" />
-        <comparison active="True" value="2" operand="=" ifValue="0" elseValue="" />
+        <source type="FSUIPC" offset="0x6588" offsetType="Integer" size="2" mask="0xFFFF" bcdMode="False" />
+        <comparison active="False" value="" operand="" ifValue="" elseValue="" />
         <display type="Pin" serial="CORE_MCP_v17_2/ SN-c40-9b2" trigger="normal" pin="Backlight_Pin" pinBrightness="255" pinPwm="True" />
+        <interpolation active="True">
+          <value x="0" y="0" />
+          <value x="150" y="255" />
+        </interpolation>
         <preconditions />
         <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
         <configrefs>
